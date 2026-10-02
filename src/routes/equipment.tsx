@@ -32,7 +32,7 @@ function Tree({ nodes, sel, onSel, depth = 0 }: { nodes: Node[]; sel?: Node; onS
 }
 
 function EquipmentPage() {
-  const [sel, setSel] = useState<Node>(equipmentTree[0].children![0].children![0]);
+  const [sel, setSel] = useState<Node>(equipmentTree[0]!.children![0]!.children![0]!);
   const jobs = workOrders.filter((w) => w.equipment === sel.name);
   return (
     <Shell title="Equipment">
