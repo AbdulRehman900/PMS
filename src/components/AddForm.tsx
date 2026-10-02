@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export type Field = { name: string; label: string; type?: "text" | "number" | "select"; options?: string[] };
 
-export function AddForm({ title, fields, onAdd }: { title: string; fields: Field[]; onAdd: (v: Record<string, string>) => void }) {
+export function AddForm({ title, fields, onAdd }: { title: string; fields: Field[]; onAdd: (v: any) => void }) {
   const [open, setOpen] = useState(false);
   const blank = () => Object.fromEntries(fields.map((f) => [f.name, f.options?.[0] ?? ""]));
   const [v, setV] = useState<Record<string, string>>(blank);
