@@ -15,7 +15,7 @@ export const Route = createFileRoute("/equipment")({
   component: EquipmentPage,
 });
 
-function Tree({ nodes, sel, onSel, depth = 0 }: { nodes: Node[]; sel?: Node; onSel: (n: Node) => void; depth?: number }) {
+function Tree({ nodes, sel, onSel, depth = 0 }: { nodes: Node[]; sel?: Node | undefined; onSel: (n: Node) => void; depth?: number }) {
   return (
     <ul>
       {nodes.map((n) => (

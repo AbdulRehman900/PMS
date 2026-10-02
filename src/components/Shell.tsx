@@ -29,8 +29,8 @@ export function Shell({ title, children }: { title: string; children: ReactNode 
         </nav>
         <div className="mt-auto rounded-lg border border-border p-3 text-xs">
           <div className="text-muted-foreground">Active vessel</div>
-          <div className="mt-1 font-medium">{vessels[0].name}</div>
-          <div className="font-mono text-muted-foreground">IMO {vessels[0].imo}</div>
+          <div className="mt-1 font-medium">{vessels[0]?.name}</div>
+          <div className="font-mono text-muted-foreground">IMO {vessels[0]?.imo}</div>
         </div>
       </aside>
       <main className="flex-1 overflow-x-hidden">
