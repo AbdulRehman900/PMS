@@ -30,7 +30,7 @@ function DefectsPage() {
             { name: "status", label: "Status", type: "select", options: ["Open", "Under repair", "Awaiting spares", "Closed"] },
           ]}
           onAdd={(v) =>
-            setList([{ id: `DEF-${String(32 + list.length).padStart(3, "0")}`, title: v.title!, equipment: v.equipment!, severity: v.severity!, status: v.status!, reported: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" }) }, ...list])
+            setList([{ id: `DEF-${String(32 + list.length).padStart(3, "0")}`, title: v.title, equipment: v.equipment, severity: v.severity, status: v.status, reported: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short" }) }, ...list])
           }
         />
       </div>

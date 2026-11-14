@@ -31,7 +31,12 @@ function SparesPage() {
             { name: "min", label: "Minimum stock", type: "number" },
             { name: "location", label: "Location" },
           ]}
-          onAdd={(v) => setList([{ part: v.part!, no: v.no!, onHand: Number(v.onHand), min: Number(v.min), location: v.location! }, ...list])}
+          validate={(values) =>
+            list.some((spare) => spare.no.trim().toLowerCase() === values.no.toLowerCase())
+              ? "A spare part with this part number already exists."
+              : undefined
+          }
+          onAdd={(v) => setList([{ part: v.part, no: v.no, onHand: Number(v.onHand), min: Number(v.min), location: v.location }, ...list])}
         />
       </div>
       <Card className="overflow-x-auto p-0">
