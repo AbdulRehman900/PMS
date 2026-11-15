@@ -45,7 +45,7 @@ function WorkOrdersPage() {
           ]}
           onAdd={(v) =>
             setList([
-              { id: `WO-24-${String(200 + list.length).padStart(4, "0")}`, title: v.title!, equipment: v.equipment!, interval: v.interval!, due: v.due!, assignee: v.assignee!, status: v.status as Status, critical: v.critical === "Yes" },
+              { id: `WO-24-${String(200 + list.length).padStart(4, "0")}`, title: v.title, equipment: v.equipment, interval: v.interval, due: v.due, assignee: v.assignee, status: v.status as Status, critical: v.critical === "Yes" },
               ...list,
             ])
           }
